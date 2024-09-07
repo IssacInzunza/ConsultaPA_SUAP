@@ -18,7 +18,13 @@ import mx.desarrollo.integracion.ServiceFacadeLocator;
  */
 public class LoginHelper implements Serializable{
     
+    
+    
+    // mi cambio de alejandro
 
+    
+    
+    
     /**
      * Metodo para hacer login llamara a la instancia de usuarioFacade
      * @param correo
