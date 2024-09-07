@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author Johan
  */
 
-// hola isac
+// hola mundo
 @Entity
 @Table(name = "alumno")
 @XmlRootElement
