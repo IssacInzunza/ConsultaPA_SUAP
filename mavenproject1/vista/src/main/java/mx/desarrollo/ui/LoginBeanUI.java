@@ -29,6 +29,7 @@ public class LoginBeanUI implements Serializable{
         loginHelper = new LoginHelper();
     }
     
+    // o me duermooooooooooooo
     /**
      * Metodo postconstructor todo lo que este dentro de este metodo
      * sera la primero que haga cuando cargue la pagina
