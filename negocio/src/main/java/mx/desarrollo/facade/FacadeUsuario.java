@@ -6,7 +6,7 @@
 package mx.desarrollo.facade;
 
 import mx.desarrollo.delegate.DelegateUsuario;
-import mx.desarrollo.entidad.Usuario;
+import mx.SUAP.entidad.Usuario;
 
 /**
  *
