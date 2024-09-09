@@ -8,7 +8,7 @@ package test;
 import java.util.ArrayList;
 import java.util.List;
 import mx.desarrollo.DAO.UsuarioDAO;
-import mx.desarrollo.entidad.Usuario;
+import mx.SUAP.entidad.Usuario;
 
 /**
  *
