@@ -5,13 +5,12 @@
  */
 package mx.desarrollo.DAO;
 
-import mx.SUAP.entidad.Usuario;
+import mx.SUAP.entidad.Asignacion;
 import mx.desarrollo.persistencia.AbstractDAO;
-
 /**
  *
- * @author total
+ * @author issac
  */
-public class UsuarioDAO extends AbstractDAO<Integer, Usuario>{
+public class AsignacionDAO extends AbstractDAO<Integer, Asignacion>{
     
 }
