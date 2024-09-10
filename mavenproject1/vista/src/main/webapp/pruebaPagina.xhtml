@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Unidades de Aprendizaje</title>
+</h:head>
+
+<h:body>
+    <h:form>
+        <p:dataTable value="#{unidadBean.unidades}" var="unidad" paginator="true" rows="10" emptyMessage="No records found.">
+            <p:column headerText="ID Unidad">
+                <h:outputText value="#{unidad.idUnidad}" />
+            </p:column>
+            <p:column headerText="Nombre">
+                <h:outputText value="#{unidad.nombre}" />
+            </p:column>
+            <p:column headerText="Horas Clase">
+                <h:outputText value="#{unidad.horasClase}" />
+            </p:column>
+            <p:column headerText="Horas Taller">
+                <h:outputText value="#{unidad.horasTaller}" />
+            </p:column>
+            <p:column headerText="Horas Laboratorio">
+                <h:outputText value="#{unidad.horasLaboratorio}" />
+            </p:column>
+        </p:dataTable>
+    </h:form>
+</h:body>
+</html>
