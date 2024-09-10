@@ -5,7 +5,7 @@
  */
 package mx.desarrollo.delegate;
 
-import mx.desarrollo.entidad.Alumno;
+import mx.SUAP.entidad.Alumno;
 import mx.desarrollo.integracion.ServiceLocator;
 
 /**

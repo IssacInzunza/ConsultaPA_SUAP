@@ -5,7 +5,7 @@
  */
 package mx.desarrollo.DAO;
 
-import mx.desarrollo.entidad.Usuario;
+import mx.SUAP.entidad.Usuario;
 import mx.desarrollo.persistencia.AbstractDAO;
 
 /**
