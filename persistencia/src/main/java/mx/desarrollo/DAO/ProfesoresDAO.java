@@ -13,4 +13,6 @@ import mx.desarrollo.persistencia.AbstractDAO;
  */
 public class ProfesoresDAO extends AbstractDAO<Integer, Profesores>{
     
+   
+   
 }
