@@ -8,8 +8,6 @@ package mx.desarrollo.helper;
 import java.io.IOException;
 import java.io.Serializable;
 import javax.faces.context.FacesContext;
-import mx.SUAP.entidad.Alumno;
-import mx.SUAP.entidad.Usuario;
 import mx.desarrollo.integracion.ServiceFacadeLocator;
 
 /**
@@ -31,9 +29,7 @@ public class LoginHelper implements Serializable{
      * @param password
      * @return 
      */
-    public Usuario Login(String correo, String password){
-        return ServiceFacadeLocator.getInstanceFacadeUsuario().login(password, correo);
-    }
+    
     
     
     
