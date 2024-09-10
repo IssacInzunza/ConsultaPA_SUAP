@@ -5,8 +5,9 @@
  */
 package mx.desarrollo.integracion;
 
-import mx.desarrollo.DAO.AlumnoDAO;
-import mx.desarrollo.DAO.UsuarioDAO;
+import mx.desarrollo.DAO.AsignacionDAO;
+import mx.desarrollo.DAO.ProfesoresDAO;
+import mx.desarrollo.DAO.UnidadDeAprendizajeDAO;
 
 
 /**
@@ -15,28 +16,39 @@ import mx.desarrollo.DAO.UsuarioDAO;
  */
 public class ServiceLocator {
     
-    private static AlumnoDAO alumnoDAO;
-    private static UsuarioDAO usuarioDAO;
+    private static AsignacionDAO asignacionDAO;
+    private static ProfesoresDAO profesoresDAO;
+    private static UnidadDeAprendizajeDAO unidaddeprendizajeDAO;
+
     /**
      * se crea la instancia para alumno DAO si esta no existe
      */
-    public static AlumnoDAO getInstanceAlumnoDAO(){
-        if(alumnoDAO == null){
-            alumnoDAO = new AlumnoDAO();
-            return alumnoDAO;
+    public static AsignacionDAO getInstanceAsignacionDAO(){
+        if(asignacionDAO == null){
+            asignacionDAO = new AsignacionDAO();
+            return asignacionDAO;
         } else{
-            return alumnoDAO;
+            return asignacionDAO;
         }
     }
     /**
      * se crea la instancia de usuarioDAO si esta no existe
      */
-    public static UsuarioDAO getInstanceUsuarioDAO(){
-        if(usuarioDAO == null){
-            usuarioDAO = new UsuarioDAO();
-            return usuarioDAO;
+    public static ProfesoresDAO getInstanceProfesoresDAO(){
+        if(profesoresDAO == null){
+            profesoresDAO = new ProfesoresDAO();
+            return profesoresDAO;
         } else{
-            return usuarioDAO;
+            return profesoresDAO;
+        }
+    }
+    
+    public static UnidadDeAprendizajeDAO getInstanceUnidadDeAprendizajeDAO(){
+        if(unidaddeprendizajeDAO == null){
+            unidaddeprendizajeDAO = new UnidadDeAprendizajeDAO();
+            return unidaddeprendizajeDAO;
+        } else{
+            return unidaddeprendizajeDAO;
         }
     }
     
