@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mx.desarrollo.entidad;
+package mx.SUAP.entidad;
+
 //Añadí este comentario como prueba a las 4:33 PM del 9/7/2024
+// Esta es otra prueba para ver como funciona Git
+
 import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;

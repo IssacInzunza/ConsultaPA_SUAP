@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mx.desarrollo.entidad;
+package mx.SUAP.entidad;
 
 import java.io.Serializable;
 import java.util.List;
