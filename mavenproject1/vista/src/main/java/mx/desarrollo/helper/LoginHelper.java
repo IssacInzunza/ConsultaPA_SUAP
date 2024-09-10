@@ -5,9 +5,14 @@
  */
 package mx.desarrollo.helper;
 
+import java.io.Serializable;
+
+/*
 import java.io.IOException;
 import java.io.Serializable;
 import javax.faces.context.FacesContext;
+import mx.SUAP.entidad.Alumno;
+import mx.SUAP.entidad.Usuario;
 import mx.desarrollo.integracion.ServiceFacadeLocator;
 
 /**
@@ -16,21 +21,18 @@ import mx.desarrollo.integracion.ServiceFacadeLocator;
  */
 public class LoginHelper implements Serializable{
     
-    
-    
-    // mi cambio de alejandro
 
-    
-    
-    
     /**
      * Metodo para hacer login llamara a la instancia de usuarioFacade
      * @param correo
      * @param password
      * @return 
      */
-    
-    
+    /*
+    public Usuario Login(String correo, String password){
+        return ServiceFacadeLocator.getInstanceFacadeUsuario().login(password, correo);
+    }
+    */
     
     
 }
