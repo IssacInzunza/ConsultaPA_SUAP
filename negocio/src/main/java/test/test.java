@@ -13,15 +13,14 @@ import mx.desarrollo.integracion.ServiceFacadeLocator;
  * @author lukki
  */
 public class test {
-
     public static void main(String[] args) {
-
-        Profesores profesores = ServiceFacadeLocator.getInstanceFacadeProfesores().findProfesoresById(1);
-
-        if (profesores != null && profesores.getIdProfesor() != null) {
+        
+       Profesores profesores = ServiceFacadeLocator.getInstanceFacadeProfesores().findProfesoresById(1);
+        
+        if(profesores.getIdProfesor()!= null){
             System.out.println("Login exitoso con el correo: ");
-        } else {
-            System.out.println("No se encontró registro");
+        }else{
+            System.out.println("No se encontro registro");
         }
     }
 }
