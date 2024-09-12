@@ -17,11 +17,15 @@ import mx.desarrollo.integracion.ServiceFacadeLocator;
  */
 public class ProfesorHelper implements Serializable{
     
-    public boolean deleteProfesor(Profesores profesor) {
-        return ServiceFacadeLocator.getInstanceFacadeProfesores().deleteProfesores(profesor);
+    public void deleteProfesor(Profesores profesor) {
+        ServiceFacadeLocator.getInstanceFacadeProfesores().deleteProfesores(profesor);
     }
     
     public List<Profesores> getlistProfesores() {
         return ServiceFacadeLocator.getInstanceFacadeProfesores().findAllProfesores();
+    }
+    
+    public void updateProfesor(Profesores profesor){
+        ServiceFacadeLocator.getInstanceFacadeProfesores().updateProfesores(profesor);
     }
 }
