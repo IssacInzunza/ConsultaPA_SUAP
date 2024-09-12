@@ -57,17 +57,22 @@ and open the template in the editor.
         </style>
     </h:head>
     <h:body>
-        <p:commandButton value="Retorno" action="#{bean.retorno}" class="btn-retorno" />
 
         <div class="contenedor">
-            <h2>Lista de Profesores y Unidades de Aprendizaje</h2>
-            
-            <p:dataTable var="profesor" value="#{bean.profesores}" paginator="true" rows="10">
-                <p:column headerText="Profesor">
+            <h2>Lista de Profesores</h2>
+
+            <p:dataTable var="profesor" value="#{profesorBeanUI.profesores}" paginator="true" rows="10">
+                <p:column headerText="ID">
+                    <h:outputText value="#{profesor.idProfesor}" />
+                </p:column>
+                <p:column headerText="Nombre">
                     <h:outputText value="#{profesor.nombre}" />
                 </p:column>
-                <p:column headerText="Unidad de Aprendizaje">
-                    <h:outputText value="#{profesor.unidadAprendizaje}" />
+                <p:column headerText="Apellido">
+                    <h:outputText value="#{profesor.apellido}" />
+                </p:column>
+                <p:column headerText="RFC">
+                    <h:outputText value="#{profesor.rfc}" />
                 </p:column>
             </p:dataTable>
         </div>
