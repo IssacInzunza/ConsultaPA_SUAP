@@ -6,7 +6,11 @@ import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 import mx.SUAP.entidad.Asignacion;
 
+<<<<<<< Updated upstream
 @Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2024-09-10T15:42:44")
+=======
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2024-09-09T22:32:40")
+>>>>>>> Stashed changes
 @StaticMetamodel(UnidadDeAprendizaje.class)
 public class UnidadDeAprendizaje_ { 
 
