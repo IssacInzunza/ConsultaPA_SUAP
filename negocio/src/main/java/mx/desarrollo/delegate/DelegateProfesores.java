@@ -46,4 +46,5 @@ public class DelegateProfesores {
     /*public Profesores findProfesorById(String nombre) {
         return ServiceLocator.getInstanceProfesoresDAO().find(nombre);
     }*/
+
 }

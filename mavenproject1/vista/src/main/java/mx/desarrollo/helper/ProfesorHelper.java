@@ -28,4 +28,6 @@ public class ProfesorHelper implements Serializable{
     public void updateProfesor(Profesores profesor){
         ServiceFacadeLocator.getInstanceFacadeProfesores().updateProfesores(profesor);
     }
+    
+    
 }
