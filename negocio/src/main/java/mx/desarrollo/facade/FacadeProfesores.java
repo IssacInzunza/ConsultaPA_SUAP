@@ -27,8 +27,8 @@ public class FacadeProfesores {
         delegateProfesores.updateProfesores(profesores);
     }
 
-    public boolean deleteProfesores(Profesores profesores) {
-        return delegateProfesores.deleteProfesores(profesores);
+    public void deleteProfesores(Profesores profesores) {
+        delegateProfesores.deleteProfesores(profesores);
     }
 
     public List<Profesores> findAllProfesores() {
@@ -38,9 +38,5 @@ public class FacadeProfesores {
     public Profesores findProfesoresById(Integer id) {
         return delegateProfesores.findProfesorById(id);
     }
-    
-    /*public Profesores getProfesorByNombre(String nombre) {
-        return delegateProfesores.buscar(nombre);
-    }*/
-    
+
 }

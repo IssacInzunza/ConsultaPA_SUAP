@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package mx.desarrollo.helper;
 
 import java.io.Serializable;
+import java.util.List;
 import mx.SUAP.entidad.Profesores;
 import mx.desarrollo.integracion.ServiceFacadeLocator;
 
@@ -15,12 +17,15 @@ import mx.desarrollo.integracion.ServiceFacadeLocator;
  */
 public class ProfesorHelper implements Serializable{
     
-    
-    public boolean deleteProfesor(Profesores profesor) {
-        return ServiceFacadeLocator.getInstanceFacadeProfesores().deleteProfesores(profesor);
+    public void deleteProfesor(Profesores profesor) {
+        ServiceFacadeLocator.getInstanceFacadeProfesores().deleteProfesores(profesor);
     }
     
-   /* public Profesores busqueda(Profesores profesor) {
-        return ServiceFacadeLocator.getInstanceFacadeProfesores().busqueda(profesor);
-    }*/
+    public List<Profesores> getlistProfesores() {
+        return ServiceFacadeLocator.getInstanceFacadeProfesores().findAllProfesores();
+    }
+    
+    public void updateProfesor(Profesores profesor){
+        ServiceFacadeLocator.getInstanceFacadeProfesores().updateProfesores(profesor);
+    }
 }

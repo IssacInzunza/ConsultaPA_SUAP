@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,39 +6,50 @@
  */
 package mx.desarrollo.ui;
 
-import java.util.Scanner;
+import java.io.Serializable;
+import java.util.List;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 import mx.SUAP.entidad.Profesores;
-import mx.desarrollo.integracion.ServiceFacadeLocator;/**
+import mx.desarrollo.helper.ProfesorHelper;
+/**
  *
  * @author jesus
  */
-public class ProfesorBeanUI {
-    static private Profesores profesores;
+@ManagedBean
+@ViewScoped
+public class ProfesorBeanUI implements Serializable{
+    private final ProfesorHelper helper;
+    private List<Profesores> profesores;
+    private Profesores profesorSeleccionado; // Atributo para el profesor seleccionado
     
     public ProfesorBeanUI() {
-        profesores = new Profesores();
+        helper = new ProfesorHelper();
+        this.profesores = helper.getlistProfesores();
     }
     
+    public List<Profesores> getProfesores() {
+        return profesores;
+    }
+    
+    public void setProfesorSeleccionado(Profesores profesorSeleccionado) {
+        this.profesorSeleccionado = profesorSeleccionado;
+    }
+    
+     public void modificarProfesorDesdeFormulario() {
+        if (profesorSeleccionado != null) {
+            helper.updateProfesor(profesorSeleccionado); 
+            this.profesores = helper.getlistProfesores();
+        }
+    }
 
-    public void init() {
-        
-    }
-    
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        ProfesorBeanUI beanUI = new ProfesorBeanUI();
-        
-        System.out.print("Ingrese el nombre del profesor a eliminar: ");
-        String nombre = scanner.nextLine();
-        
-        profesores.setNombre(nombre);
-        
-            //boolean eliminado = profesorhelper.deleteProfesor(profesores);
-           boolean eliminado = ServiceFacadeLocator.getInstanceFacadeProfesores().deleteProfesores(profesores);
-           if (eliminado) {
-                System.out.println("Profesor eliminado con éxito.");
-            } else {
-                System.out.println("No se encontró el profesor.");
-            }
-        } 
+
+
+     public void eliminarProfesor() {
+        if (profesorSeleccionado != null) {
+            helper.deleteProfesor(profesorSeleccionado);
+            this.profesores = helper.getlistProfesores();
+        }
+     }
+     
 }
