@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package mx.SUAP.helper;
+import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
 import java.io.IOException;
 import java.io.Serializable; //aa
 import javax.faces.context.FacesContext;
@@ -16,7 +17,11 @@ import mx.desarrollo.integracion.ServiceFacadeLocator;
  */
 public class AltaUDAHelper {
 
-    public void darDeAltaUDA(UnidadesDeAprendizaje nuevaUDA) {
+    public void darDeAltaUDA(UnidadesDeAprendizaje nuevaUDA) throws MySQLIntegrityConstraintViolationException {
         ServiceFacadeLocator.getInstanceFacadeUnidadDeAprendizaje().guardarUnidaddeaprendizaje(nuevaUDA);
+    }
+    
+    public UnidadesDeAprendizaje encontrarUDARepetida (Integer id) {
+        return ServiceFacadeLocator.getInstanceFacadeUnidadDeAprendizaje().findUnidadDeAprendizajeById(id);
     }
 }
