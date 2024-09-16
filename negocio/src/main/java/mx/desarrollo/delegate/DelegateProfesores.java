@@ -22,17 +22,8 @@ public class DelegateProfesores {
         ServiceLocator.getInstanceProfesoresDAO().update(profesor);
     }
 
-    public boolean deleteProfesores(Profesores profesor) {
-        //Profesores profesores = new Profesores();
-        List<Profesores> prof = ServiceLocator.getInstanceProfesoresDAO().findAll();
-        for(Profesores pro:prof){
-            if(pro.getNombre().equalsIgnoreCase(profesor.getNombre())){
-                //profesores = pro;
-                ServiceLocator.getInstanceProfesoresDAO().delete(pro);
-                return true;
-            }
-        }
-        return false;
+    public void deleteProfesores(Profesores profesor) {
+        ServiceLocator.getInstanceProfesoresDAO().delete(profesor);
     }
 
     public List<Profesores> findAllProfesores() {
@@ -43,8 +34,19 @@ public class DelegateProfesores {
         return ServiceLocator.getInstanceProfesoresDAO().find(id);
     }
     
-    /*public Profesores findProfesorById(String nombre) {
-        return ServiceLocator.getInstanceProfesoresDAO().find(nombre);
-    }*/
-
+   //encontrar profesor en la bdd
+    public Profesores encontrarProfesorRegistrado(Integer idABuscar){
+        Profesores profesor = new Profesores();
+        
+        List<Profesores> profesores = ServiceLocator.getInstanceProfesoresDAO().findAll();
+       
+        for(Profesores pf :profesores){
+            //System.out.println(pf.toString());
+            if(pf.getIdProfesor()==idABuscar)
+                profesor = pf;
+        }
+        return profesor;
+    }
+   
+    
 }

@@ -22,8 +22,10 @@
     <property name="c3p0.timeout">100</property>
     <!-- Nota: Aqui deben ir todas las entidades que se formaron de su base de datos
 en este caso se crearon las siguiente -->
-    <mapping class="mx.SUAP.entidad.Asignacion"/>
+    <mapping class="mx.SUAP.entidad.Administradores"/>
+    <mapping class="mx.SUAP.entidad.Horario"/>
+    <mapping class="mx.SUAP.entidad.Usuarios"/>
     <mapping class="mx.SUAP.entidad.Profesores"/>
-    <mapping class="mx.SUAP.entidad.UnidadDeAprendizaje"/>
+    <mapping class="mx.SUAP.entidad.UnidadesDeAprendizaje"/>
   </session-factory>
 </hibernate-configuration>

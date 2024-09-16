@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Gestión Unidades</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            body, html {
+                height: 100%;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .contenedor {
+                width: 80%;
+                margin-top: 20px;
+                padding: 20px;
+                border-radius: 10px;
+                background-color: #f7f7f7;
+                box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .ui-datatable table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            .ui-datatable th, .ui-datatable td {
+                padding: 12px;
+                border: 1px solid #ddd;
+            }
+
+            .ui-datatable th {
+                background-color: #4CAF50;
+                color: white;
+            }
+
+            .ui-datatable td {
+                text-align: center;
+            }
+        </style>
+    </h:head>
+    <h:body>
+
+        <h:form id="formUnidades">
+            <div class="contenedor">
+                <h2>Lista de unidades academicas</h2>
+
+                <p:dataTable var="unidadesacademicas" value="#{unidadBeanUI.unidades}" paginator="true" rows="10">
+                    <p:column headerText="ID">
+                        <h:outputText value="#{unidadesacademicas.idUnidadAprendizaje}" />
+                    </p:column>
+                    <p:column headerText="Nombre">
+                        <h:outputText value="#{unidadesacademicas.nombre}" />
+                    </p:column>
+                    <p:column headerText="Horas Clase">
+                        <h:outputText value="#{unidadesacademicas.horasClase}" />
+                    </p:column>
+                    <p:column headerText="Horas Taller">
+                        <h:outputText value="#{unidadesacademicas.horasTaller}" />
+                    </p:column>
+                    <p:column headerText="Horas Laboratorio">
+                        <h:outputText value="#{unidadesacademicas.horasLaboratorio}" />
+                    </p:column>
+                </p:dataTable>           
+            </div>
+        </h:form>
+
+    </h:body>
+</html>
+
