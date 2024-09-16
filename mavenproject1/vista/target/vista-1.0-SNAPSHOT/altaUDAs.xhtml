@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/altaUDAcss.css" rel="stylesheet" type="text/css"/>
+        <style>
+
+            *{
+                text-align: center;
+            }
+            .center{
+                float: none;
+                margin: 0 auto;
+
+            }
+            .logo{
+                width: 150px;
+            }
+            .form-control:focus{
+                border-color:#007738;
+            }
+            .btn-success{
+                text-shadow: none;
+            }
+
+        </style>
+    </h:head>
+
+    <h:body>
+        <div class="barra-superior"> 
+            <h1> Dar de alta unidad de aprendizaje</h1>
+        </div>
+
+
+
+        <div class="formulario-contenedor">
+
+            <!--<div class="cajaAzul"></div>
+            <div class="cajaRoja"></div>-->
+
+            <div class="cajaFormulario">
+                <h:form id="form1">
+                    <p:messages id="messages" showDetail="true" closable="true">
+                     
+                    </p:messages>
+                    <div class=" form-group">
+                        <div class="form-group">
+                            <p:inputText class ="form-control" placeholder="ID de uniddad "  value="#{altaUDAUI.uda.unidadDeAprendizajeId}"/>
+                        </div>
+                        <p:inputText class ="form-control" placeholder ="Nombre de unidad:" autocomplete="false" value="#{altaUDAUI.uda.nombre}"/>
+                    </div>
+                    <div class="form-group"> 
+                        <p:inputText class ="form-control" placeholder="Horas clase: "  value="#{altaUDAUI.uda.horasClase}"/>
+                    </div>
+                    <div class="form-group">
+                        <p:inputText class ="form-control" placeholder="Horas taller: "  value="#{altaUDAUI.uda.horasTaller}"/>
+                    </div>
+                    <div class="form-group">
+                        <p:inputText class ="form-control" placeholder="Horas laboratorio: "  value="#{altaUDAUI.uda.horasLaboratorio}"/>
+                    </div>
+
+                    <p:commandButton update="messages" class="btn btn-success" value="Dar de alta UDA" actionListener="#{altaUDAUI.darDeAltaUDA()}"/>
+                </h:form>
+            </div>
+            <div class="cajaFormulario">
+                <h:form>
+
+                    <p:selectOneMenu value="#{altaUDAUI.selectedDia}" 
+                                         >
+                            <f:selectItem itemLabel="Selecciona el dia" itemValue="" />
+                            <f:selectItems value="#{altaUDAUI.dias}" />
+                        </p:selectOneMenu>
+                    <p:selectOneMenu value="#{altaUDAUI.selectedTipo}" 
+                                         >
+                            <f:selectItem itemLabel="Selecciona el tipo de hora" itemValue="" />
+                            <f:selectItems value="#{altaUDAUI.tipo}" />
+                        </p:selectOneMenu>
+                    <div class="form-group"> 
+                        <p:inputText class ="form-control" placeholder="Hora inicio: 24:00"  />
+                    </div>
+                    <div class="form-group">
+                        <p:inputText class ="form-control" placeholder="Hora fin: 24:00"  />
+                    </div>
+
+
+                    <p:commandButton class="btn btn-success" />
+                </h:form>
+            </div>
+
+
+        </div> 
+    </h:body>
+</html>

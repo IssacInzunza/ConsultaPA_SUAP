@@ -33,4 +33,20 @@ public class DelegateProfesores {
     public Profesores findProfesorById(Integer id) {
         return ServiceLocator.getInstanceProfesoresDAO().find(id);
     }
+    
+   //encontrar profesor en la bdd
+    public Profesores encontrarProfesorRegistrado(Integer idABuscar){
+        Profesores profesor = new Profesores();
+        
+        List<Profesores> profesores = ServiceLocator.getInstanceProfesoresDAO().findAll();
+       
+        for(Profesores pf :profesores){
+            //System.out.println(pf.toString());
+            if(pf.getIdProfesor()==idABuscar)
+                profesor = pf;
+        }
+        return profesor;
+    }
+   
+    
 }
