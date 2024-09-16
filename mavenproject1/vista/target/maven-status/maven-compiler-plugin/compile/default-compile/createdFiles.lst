@@ -1,4 +1,4 @@
-mx\desarrollo\helper\LoginHelper.class
-mx\desarrollo\helper\ProfesorHelper.class
 mx\desarrollo\beanUI\LoginBeanUI.class
 mx\desarrollo\ui\ProfesorBeanUI.class
+mx\desarrollo\helper\LoginHelper.class
+mx\desarrollo\helper\ProfesorHelper.class

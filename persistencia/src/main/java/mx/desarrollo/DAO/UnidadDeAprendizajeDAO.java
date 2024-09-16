@@ -7,10 +7,16 @@ package mx.desarrollo.DAO;
 
 import mx.SUAP.entidad.UnidadDeAprendizaje;
 import mx.desarrollo.persistencia.AbstractDAO;
+import java.util.List;
+
 /**
  *
  * @author issac
  */
 public class UnidadDeAprendizajeDAO extends AbstractDAO<Integer, UnidadDeAprendizaje>{
+    
+       public List<UnidadDeAprendizaje> findAll() {
+        return super.findAll();
+    }
     
 }
