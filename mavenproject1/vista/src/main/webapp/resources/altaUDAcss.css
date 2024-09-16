@@ -1,0 +1,73 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 15, 2024, 11:18:12 PM jehrje
+    Author     : Johan
+*/
+
+.barra-superior {
+    background-color: #4D9441;  /* Color de fondo */
+    width: 100%;                /* Abarca todo el ancho de la pantalla */
+    height: 60px;               /* Ajusta la altura a tu gusto */
+    position: fixed;            /* Fija la barra en la parte superior */
+    top: 0;                     /* Posición en la parte superior */
+    left: 0;                    /* Alinea la barra a la izquierda */
+    z-index: 1000;              /* Se asegura que esté por encima de otros elementos */
+    color: white;
+}
+
+.vertical-layout {
+    display: flex;             /* Activa Flexbox */
+    flex-direction: column;     /* Organiza los elementos en una columna (verticalmente) */
+    justify-content: flex-start;/* Alinea los elementos en la parte superior */
+    align-items: center;        /* Centra los elementos horizontalmente */
+    gap: 10px;                  /* Espacio entre los elementos, ajusta según sea necesario */
+    background-color: yellowgreen;
+}
+
+div.cajaFormulario{
+    
+    height: auto;              /* Ajusta la altura según el contenido */
+    width: 300px;             /* Ancho fijo para cada formulario */
+    padding: 25px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cajaFormulario {
+    height: 300px;              /* Ajusta la altura según el contenido */
+    width: 300px;             /* Ancho fijo para cada formulario */
+    padding: 25px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.formulario-contenedor {
+    display: flex;            /* Activar el uso de Flexbox */
+    flex-direction: row;      /* Alinea los elementos en una fila horizontal */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center;     /* Centra los elementos verticalmente */
+    gap: 20px;                /* Espacio entre los elementos */
+    height: 100vh;            /* Altura del contenedor para ocupar toda la ventana */
+    background-color: bisque;
+}
+
+.cajaRoja{
+    height:80px;
+    width: 80px;
+    background-color: red;
+}
+
+.cajaAzul{
+    height:80px;
+    width: 80px;
+    background-color: blue;
+}
+
+
+
