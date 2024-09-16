@@ -71,7 +71,13 @@
                 </h:form>
             </div>
             <div class="cajaFormulario">
-                <h:form>
+                <h:form id="form2">
+                    <p:messages id="messages" showDetail="true" closable="true">
+                     
+                    </p:messages>
+                    <div class="form-group"> 
+                        <p:inputText class ="form-control" placeholder="ID UDA"  />
+                    </div>
 
                     <p:selectOneMenu value="#{altaUDAUI.selectedDia}" 
                                          >

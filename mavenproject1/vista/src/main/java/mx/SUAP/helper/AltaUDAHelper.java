@@ -15,7 +15,7 @@ import mx.desarrollo.integracion.ServiceFacadeLocator;
  *
  * @author Johan
  */
-public class AltaUDAHelper {
+public class AltaUDAHelper implements Serializable{
 
     public void darDeAltaUDA(UnidadesDeAprendizaje nuevaUDA) throws MySQLIntegrityConstraintViolationException {
         ServiceFacadeLocator.getInstanceFacadeUnidadDeAprendizaje().guardarUnidaddeaprendizaje(nuevaUDA);
