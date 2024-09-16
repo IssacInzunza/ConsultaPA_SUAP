@@ -1,4 +1,10 @@
-mx\desarrollo\entidad\Usuario_.class
-mx\desarrollo\entidad\Alumno.class
-mx\desarrollo\entidad\Alumno_.class
-mx\desarrollo\entidad\Usuario.class
+mx\SUAP\entidad\Administradores.class
+mx\SUAP\entidad\UnidadesDeAprendizaje_.class
+mx\SUAP\entidad\Usuarios.class
+mx\SUAP\entidad\Profesores_.class
+mx\SUAP\entidad\Profesores.class
+mx\SUAP\entidad\Horario_.class
+mx\SUAP\entidad\UnidadesDeAprendizaje.class
+mx\SUAP\entidad\Horario.class
+mx\SUAP\entidad\Administradores_.class
+mx\SUAP\entidad\Usuarios_.class
