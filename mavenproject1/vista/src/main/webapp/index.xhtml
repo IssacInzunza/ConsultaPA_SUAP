@@ -1,59 +1,60 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:jsf="http://xmlns.jcp.org/jsf"
-          
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Vista de Administrador</title>
+        <style>
+            .logo {
+                text-align: center;
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            .logo img {
+                width: 400px; /* Ancho fijo del logo */
+                height: 200px; /* Alto fijo del logo */
+                display: block; /* Para centrar con auto margin */
+                margin: 0 auto 10px; /* Centrado horizontal y espacio inferior */
+            }
+
+            .logo span {
+                color: green;
+                font-weight: bold;
+            }
+
+            .button-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+                gap: 10px; /* Espacio entre los botones */
+                justify-content: center; /* Centra el grid horizontalmente */
+                justify-items: center; /* Centra los botones dentro de las columnas */
+            }
+
+            .button {
+                width: 150px;
+                height: 100px;
+            }
+        </style>
     </h:head>
     <h:body>
-        <p:panelGrid class="txt">
-            <f:facet name="header">  
-                <p:row>
-                    <p:column colspan="7"><p:graphicImage url="resources/user.png" class="logo"/></p:column>
-                </p:row>
-            </f:facet>
-            <p:row>
-                <p:column styleClass="celda">Nombre:</p:column>
-                <p:column><h:outputText value="#{loginUI.usuario.idAlumno.nombre}" /></p:column>
-            </p:row>
-            <p:row>
-                <p:column styleClass="celda">Apellido:</p:column>
-                <p:column><h:outputText value="#{loginUI.usuario.idAlumno.apellidos}" /></p:column>
-            </p:row>
-            <p:row>
-                <p:column styleClass="celda">Matricula:</p:column>
-                <p:column><h:outputText value="#{loginUI.usuario.idAlumno.matricula}" /></p:column>
-            </p:row>
-        </p:panelGrid>
-    </h:body>
-    <style>
-        .logo{
-            width: 170px;
-        }
-        .celda{
-            width: 25%;
-            background-color: #089b4d;
-            color:white;
-        }
-        .txt{
-                position: absolute;
-                top:0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                height: 35%;
-                width: 25%;
-                padding: 25px;
-                margin: auto;
-                background: white;
-                border-radius: 5px;
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            
-        }
-    </style>
-</html>
+        <h:form>
+            <!-- Logo y título centrado -->
+            <div class="logo">
+                <img src="https://citecuvp.tij.uabc.mx/wp-content/uploads/2022/10/ISOTIPO-UABC-COLORORIGINAL.png" alt="Logo UABC"/>
+                <div><span>UABC</span> Vista de administrador</div>
+            </div>
 
+            <!-- Contenedor de botones con PrimeFaces -->
+            <div class="button-container">
+                <p:commandButton value="Alta Profesores" styleClass="button" action="#{adminBeanUI.redirigirAAltaProfesor()}" />
+                <p:commandButton value="Alta Unidades Academicas" styleClass="button"/>
+                <p:commandButton value="Consulta Profesores" styleClass="button" action="#{adminBeanUI.redirigirAConsultaProfesor}" />
+                <p:commandButton value="Consulta Unidades" styleClass="button" action="#{adminBeanUI.redirigirAConsultaUnidades()}"/>
+                <p:commandButton value="Botón 5" styleClass="button"/>
+                <p:commandButton value="Botón 6" styleClass="button"/>
+                <!-- Puedes añadir más botones sin límite -->
+            </div>
+        </h:form>
+    </h:body>
+</html>
