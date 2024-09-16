@@ -1,38 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+package mx.desarrollo.helper;
 
-package mx.SUAP.helper;
-
-import java.io.Serializable;
 import java.util.List;
+import mx.SUAP.entidad.Asignacion;
 import mx.SUAP.entidad.Profesores;
-import mx.SUAP.entidad.UnidadesDeAprendizaje;
-import mx.desarrollo.integracion.ServiceFacadeLocator;
+import mx.desarrollo.integracion.ServiceLocator;
 
-/**
- *
- * @author jesus
- */
-public class ProfesorHelper implements Serializable{
-    
-    public void deleteProfesor(Profesores profesor) {
-        ServiceFacadeLocator.getInstanceFacadeProfesores().deleteProfesores(profesor);
-    }
-    
+public class ProfesorHelper {
+
     public List<Profesores> getlistProfesores() {
-        return ServiceFacadeLocator.getInstanceFacadeProfesores().findAllProfesores();
+        return ServiceLocator.getInstanceProfesoresDAO().findAll();
     }
-    
-    public void updateProfesor(Profesores profesor){
-        ServiceFacadeLocator.getInstanceFacadeProfesores().updateProfesores(profesor);
+
+    public void updateAsignacion(Asignacion asignacion) {
+        ServiceLocator.getInstanceAsignacionDAO().saveOrUpdate(asignacion);
     }
-    
-    /**
-    public List<UnidadesDeAprendizaje> findUnidadesByProfesor(Profesores profesor){
-        return ServiceFacadeLocator.getInstanceFacadeUnidadDeAprendizaje().findUnidadesByProfesor(profesor.getIdProfesor());
+
+    public List<Asignacion> getAsignacionesPorProfesor(Profesores profesor) {
+        return ServiceLocator.getInstanceAsignacionDAO().findByOneParameter(String.valueOf(profesor.getIdProfesor()), "idProfesor");
     }
-    * */
+
+    public void deleteProfesor(Profesores profesor) {
+        ServiceLocator.getInstanceProfesoresDAO().delete(profesor);
+    }
 }

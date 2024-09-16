@@ -7,8 +7,8 @@ package test;
 
 import java.util.ArrayList;
 import java.util.List;
-import mx.desarrollo.DAO.UsuariosDAO;
-import mx.SUAP.entidad.Usuarios;
+import mx.SUAP.entidad.Asignacion;
+import mx.desarrollo.integracion.ServiceLocator;
 
 /**
  *
@@ -16,12 +16,11 @@ import mx.SUAP.entidad.Usuarios;
  */
 public class test {
     public static void main(String[] args) {
-        List<Usuarios> listaUsuarios = new ArrayList();
-        UsuariosDAO usuarioDao = new UsuariosDAO();
-        listaUsuarios = usuarioDao.findAll();
+        List<Asignacion> listaUsuarios = new ArrayList();
+       // listaUsuarios = ServiceLocator.getInstanceProfesoresDAO().findAll();
         
-        for(Usuarios us : listaUsuarios){
-            System.out.println("Usuario: " + us.getNombreDeUsuario());
+        for(Asignacion us : listaUsuarios){
+            System.out.println("Correo: " + us.getIdAsignacion());
         }
     }
 }

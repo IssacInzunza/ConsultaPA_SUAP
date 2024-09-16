@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mx.desarrollo.ui.beanUI;
+package mx.desarrollo.beanUI;
 
+import java.io.Serializable;
+
+/*
 import java.io.IOException;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
@@ -12,28 +15,29 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import mx.SUAP.helper.LoginHelper;
-/*import mx.desarrollo.entidad.Usuario;
-import mx.desarrollo.helper.LoginHelper;*/
+import mx.desarrollo.helper.LoginHelper;
 
 /**
  *
  * @author Kevin
  */
+/*
 @ManagedBean(name = "loginUI")
-@SessionScoped
+@SessionScoped*/
 public class LoginBeanUI implements Serializable{
-    private LoginHelper loginHelper;
-    
+    /*private LoginHelper loginHelper;
+    private Usuario usuario;
     
     public LoginBeanUI() {
         loginHelper = new LoginHelper();
     }
-    /*
     
+    // o me duermooooooooooooo
+    /**
      * Metodo postconstructor todo lo que este dentro de este metodo
      * sera la primero que haga cuando cargue la pagina
-     
+     */
+    /*
     @PostConstruct
     public void init(){
         usuario= new Usuario();
@@ -56,8 +60,8 @@ public class LoginBeanUI implements Serializable{
     }
 
     
-    
-
+    /* getters y setters*/
+/*
     public Usuario getUsuario() {
         return usuario;
     }
@@ -66,13 +70,15 @@ public class LoginBeanUI implements Serializable{
         this.usuario = usuario;
     }
     
-    
-    
-    
-    
-
-
-    
-
     */
+    
+    
+    
+    
+    
+    
+
+    
+
+    
 }
