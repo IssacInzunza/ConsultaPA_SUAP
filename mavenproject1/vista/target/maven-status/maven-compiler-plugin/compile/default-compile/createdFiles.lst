@@ -1,3 +1,7 @@
+mx\SUAP\helper\UnidadHelper.class
+mx\desarrollo\ui\beanUI\AdminBeanUI.class
+mx\SUAP\helper\ProfesorHelper.class
+mx\desarrollo\ui\beanUI\ProfesorBeanUI.class
 mx\desarrollo\ui\beanUI\ValidacionesCadenas.class
 mx\SUAP\helper\AltasHelper.class
 mx\desarrollo\ui\beanUI\LoginBeanUI.class

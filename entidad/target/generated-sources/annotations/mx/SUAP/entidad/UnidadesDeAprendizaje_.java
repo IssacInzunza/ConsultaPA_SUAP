@@ -7,7 +7,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 import mx.SUAP.entidad.Horario;
 import mx.SUAP.entidad.Profesores;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2024-09-16T04:25:46")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2024-09-16T15:53:36")
 @StaticMetamodel(UnidadesDeAprendizaje.class)
 public class UnidadesDeAprendizaje_ { 
 

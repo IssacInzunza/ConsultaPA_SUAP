@@ -38,5 +38,9 @@ public class FacadeProfesores {
     public Profesores findProfesoresById(Integer id) {
         return delegateProfesores.findProfesorById(id);
     }
-
+    
+    /*public Profesores getProfesorByNombre(String nombre) {
+        return delegateProfesores.buscar(nombre);
+    }*/
+    
 }
