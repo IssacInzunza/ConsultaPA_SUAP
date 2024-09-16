@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.Serializable; //aa
 import javax.faces.context.FacesContext;
 import mx.SUAP.entidad.Profesores;
+import mx.SUAP.entidad.Usuarios;
 /*import mx.SUAP.entidad.Alumno;
 import mx.SUAP.entidad.Usuario;*/
 import mx.desarrollo.integracion.ServiceFacadeLocator;
@@ -29,8 +30,9 @@ public class AltasHelper implements Serializable{
      * @param rfc
      *  
      */
-    public void Alta(Profesores nuevoProfesor){
-        ServiceFacadeLocator.getInstanceFacadeProfesores().guardarProfesores(nuevoProfesor);
+    public void Alta(Profesores nuevoProfesor, Usuarios nuevoUsuario){
+        ServiceFacadeLocator.getInstanceFacadeUusuarios().guardarUsuariosProfesores(nuevoProfesor, nuevoUsuario);
+        
     }
     
     public Profesores buscar(Integer idABuscar){

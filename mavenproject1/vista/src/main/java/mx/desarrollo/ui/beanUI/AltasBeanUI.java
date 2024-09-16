@@ -76,8 +76,8 @@ public class AltasBeanUI implements Serializable{
         } else if (profesorRepetido!=null){
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Error al capturar los datos:", "El ID proporcionado ya existe en el sistema"));
         } else{
-                usuarioAltaHelper.AltaUsuario(new Usuarios(id_profesor,String.valueOf(id_profesor),nombre+" "+apellido));
-                altasHelper.Alta(profesor);
+                //usuarioAltaHelper.AltaUsuario(new Usuarios(id_profesor,String.valueOf(id_profesor),nombre+" "+apellido));
+                altasHelper.Alta(profesor, new Usuarios(id_profesor,String.valueOf(id_profesor),nombre+" "+apellido));
                 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Acción realizada", "Registro capturado exitosamente"));
             
             

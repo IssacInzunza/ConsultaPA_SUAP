@@ -6,6 +6,7 @@
 package mx.desarrollo.facade;
 
 import java.util.List;
+import mx.SUAP.entidad.Profesores;
 import mx.SUAP.entidad.Usuarios;
 import mx.desarrollo.delegate.DelegateUsuarios;
 
@@ -22,6 +23,10 @@ public class FacadeUsuarios {
     
     public void guardarUsuarios(Usuarios usuarios){
         delegateUsuarios.saveUsuarios(usuarios);
+    }
+    
+     public void guardarUsuariosProfesores(Profesores nuevoProfesor, Usuarios nuevoUsuario){
+        delegateUsuarios.saveUsuarioProfesor(nuevoProfesor, nuevoUsuario);
     }
     
     public void updateUsuarios(Usuarios usuarios) {

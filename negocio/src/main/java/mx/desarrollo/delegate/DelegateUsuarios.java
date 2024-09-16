@@ -5,6 +5,7 @@
  */
 package mx.desarrollo.delegate;
 import java.util.List;
+import mx.SUAP.entidad.Profesores;
 import mx.SUAP.entidad.Usuarios;
 import mx.desarrollo.integracion.ServiceLocator;
 /**
@@ -15,7 +16,9 @@ public class DelegateUsuarios {
     public void saveUsuarios(Usuarios profesores){
         ServiceLocator.getInstanceUsuariosDAO().save(profesores);
     }
-    
+    public void saveUsuarioProfesor(Profesores nuevoProfesor, Usuarios nuevoUsuario){
+        ServiceLocator.getInstanceUsuariosDAO().registrarProfesor(nuevoProfesor, nuevoUsuario);
+    }
     public void updateUsuarios(Usuarios profesor) {
         ServiceLocator.getInstanceUsuariosDAO().update(profesor);
     }
