@@ -1,55 +1,55 @@
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mx.desarrollo.ui.beanUI;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import mx.SUAP.entidad.Profesores;
+import mx.SUAP.entidad.UnidadesDeAprendizaje; // Asegúrate de que esta clase exista
 import mx.SUAP.helper.ProfesorHelper;
-/**
- *
- * @author jesus
- */
+
 @ManagedBean
 @ViewScoped
-public class ProfesorBeanUI implements Serializable{
+public class ProfesorBeanUI implements Serializable {
     private final ProfesorHelper helper;
     private List<Profesores> profesores;
     private Profesores profesorSeleccionado; // Atributo para el profesor seleccionado
-    
-    public ProfesorBeanUI() {
-        helper = new ProfesorHelper();
-        this.profesores = helper.getlistProfesores();
-    }
-    
+    private List<UnidadesDeAprendizaje> unidadesAsignadas; // Agrega esta línea
+
+   public ProfesorBeanUI() {
+    helper = new ProfesorHelper();
+    this.profesores = helper.getlistProfesores();
+    this.unidadesAsignadas = new ArrayList<>(); // Inicializa como lista vacía
+}
+
     public List<Profesores> getProfesores() {
         return profesores;
     }
-    
+
     public void setProfesorSeleccionado(Profesores profesorSeleccionado) {
         this.profesorSeleccionado = profesorSeleccionado;
     }
-    
-     public void modificarProfesorDesdeFormulario() {
+
+    public List<UnidadesDeAprendizaje> getUnidadesAsignadas() { // Getter para unidadesAsignadas
+        return unidadesAsignadas;
+    }
+
+    public void setUnidadesAsignadas(List<UnidadesDeAprendizaje> unidadesAsignadas) { // Setter para unidadesAsignadas
+        this.unidadesAsignadas = unidadesAsignadas;
+    }
+
+    public void modificarProfesorDesdeFormulario() {
         if (profesorSeleccionado != null) {
-            helper.updateProfesor(profesorSeleccionado); 
+            helper.updateProfesor(profesorSeleccionado);
             this.profesores = helper.getlistProfesores();
         }
     }
 
-
-
-     public void eliminarProfesor() {
+    public void eliminarProfesor() {
         if (profesorSeleccionado != null) {
             helper.deleteProfesor(profesorSeleccionado);
             this.profesores = helper.getlistProfesores();
         }
-     }
-     
+    }
 }
