@@ -15,8 +15,8 @@ import java.util.List;
  */
 public class UnidadesDeAprendizajeDAO extends AbstractDAO<Integer, UnidadesDeAprendizaje>{
     
-       public List<UnidadDeAprendizaje> findAll() {
+    /*   public List<UnidadDeAprendizaje> findAll() {
         return super.findAll();
-    }
+    }*/
     
 }
