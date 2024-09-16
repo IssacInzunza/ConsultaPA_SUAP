@@ -1,6 +1,10 @@
-mx\SUAP\entidad\Asignacion_.class
-mx\SUAP\entidad\UnidadDeAprendizaje_.class
+mx\SUAP\entidad\Administradores.class
+mx\SUAP\entidad\UnidadesDeAprendizaje_.class
+mx\SUAP\entidad\Usuarios.class
 mx\SUAP\entidad\Profesores_.class
-mx\SUAP\entidad\UnidadDeAprendizaje.class
 mx\SUAP\entidad\Profesores.class
-mx\SUAP\entidad\Asignacion.class
+mx\SUAP\entidad\Horario_.class
+mx\SUAP\entidad\UnidadesDeAprendizaje.class
+mx\SUAP\entidad\Horario.class
+mx\SUAP\entidad\Administradores_.class
+mx\SUAP\entidad\Usuarios_.class

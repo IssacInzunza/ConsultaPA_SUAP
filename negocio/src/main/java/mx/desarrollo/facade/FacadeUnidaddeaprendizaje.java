@@ -6,8 +6,8 @@
 package mx.desarrollo.facade;
 
 import java.util.List;
-import mx.SUAP.entidad.UnidadDeAprendizaje;
-import mx.desarrollo.delegate.DelegateUnidaddeaprendizaje;
+import mx.SUAP.entidad.UnidadesDeAprendizaje;
+import mx.desarrollo.delegate.DelegateUnidadesDeAprendizaje;
 
 /**
  *
@@ -15,29 +15,29 @@ import mx.desarrollo.delegate.DelegateUnidaddeaprendizaje;
  */
 public class FacadeUnidaddeaprendizaje {
     
-    private final DelegateUnidaddeaprendizaje delegateUnidaddeaprendizaje;
+    private final DelegateUnidadesDeAprendizaje delegateUnidaddeaprendizaje;
     
     public FacadeUnidaddeaprendizaje() {
-        this.delegateUnidaddeaprendizaje = new DelegateUnidaddeaprendizaje();
+        this.delegateUnidaddeaprendizaje = new DelegateUnidadesDeAprendizaje();
     }
     
-    public void guardarUnidaddeaprendizaje(UnidadDeAprendizaje unidaddeaprendizajes){
+    public void guardarUnidaddeaprendizaje(UnidadesDeAprendizaje unidaddeaprendizajes){
         delegateUnidaddeaprendizaje.saveUnidaddeaprendizaje(unidaddeaprendizajes);
     }
     
-    public void updateUnidadDeAprendizaje(UnidadDeAprendizaje unidad) {
+    public void updateUnidadDeAprendizaje(UnidadesDeAprendizaje unidad) {
         delegateUnidaddeaprendizaje.updateUnidadDeAprendizaje(unidad);
     }
 
-    public void deleteUnidadDeAprendizaje(UnidadDeAprendizaje unidad) {
+    public void deleteUnidadDeAprendizaje(UnidadesDeAprendizaje unidad) {
         delegateUnidaddeaprendizaje.deleteUnidadDeAprendizaje(unidad);
     }
 
-    public List<UnidadDeAprendizaje> findAllUnidadesDeAprendizaje() {
+    public List<UnidadesDeAprendizaje> findAllUnidadesDeAprendizaje() {
         return delegateUnidaddeaprendizaje.findAllUnidadesDeAprendizaje();
     }
 
-    public UnidadDeAprendizaje findUnidadDeAprendizajeById(Integer id) {
+    public UnidadesDeAprendizaje findUnidadDeAprendizajeById(Integer id) {
         return delegateUnidaddeaprendizaje.findUnidadDeAprendizajeById(id);
     }   
 }

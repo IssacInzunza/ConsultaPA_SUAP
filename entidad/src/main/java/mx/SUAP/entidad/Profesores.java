@@ -6,14 +6,17 @@
 package mx.SUAP.entidad;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
@@ -36,22 +39,38 @@ public class Profesores implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
-    @Column(name = "idProfesor")
+    @Column(name = "id_profesor")
     private Integer idProfesor;
+    @Basic(optional = false)
     @Column(name = "nombre")
     private String nombre;
+    @Basic(optional = false)
     @Column(name = "apellido")
     private String apellido;
+    @Basic(optional = false)
     @Column(name = "rfc")
     private String rfc;
-    @OneToMany(mappedBy = "idProfesor")
-    private Collection<Asignacion> asignacionCollection;
+    @JoinTable(name = "asignacion", joinColumns = {
+        @JoinColumn(name = "profesor_id", referencedColumnName = "id_profesor")}, inverseJoinColumns = {
+        @JoinColumn(name = "unidad_de_aprendizaje_id", referencedColumnName = "unidad_de_aprendizaje_id")})
+    @ManyToMany
+    private List<UnidadesDeAprendizaje> unidadesDeAprendizajeList;
+    @JoinColumn(name = "id_profesor", referencedColumnName = "usuario_id", insertable = false, updatable = false)
+    @OneToOne(optional = false)
+    private Usuarios usuarios;
 
     public Profesores() {
     }
 
     public Profesores(Integer idProfesor) {
         this.idProfesor = idProfesor;
+    }
+
+    public Profesores(Integer idProfesor, String nombre, String apellido, String rfc) {
+        this.idProfesor = idProfesor;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.rfc = rfc;
     }
 
     public Integer getIdProfesor() {
@@ -87,12 +106,20 @@ public class Profesores implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Asignacion> getAsignacionCollection() {
-        return asignacionCollection;
+    public List<UnidadesDeAprendizaje> getUnidadesDeAprendizajeList() {
+        return unidadesDeAprendizajeList;
     }
 
-    public void setAsignacionCollection(Collection<Asignacion> asignacionCollection) {
-        this.asignacionCollection = asignacionCollection;
+    public void setUnidadesDeAprendizajeList(List<UnidadesDeAprendizaje> unidadesDeAprendizajeList) {
+        this.unidadesDeAprendizajeList = unidadesDeAprendizajeList;
+    }
+
+    public Usuarios getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(Usuarios usuarios) {
+        this.usuarios = usuarios;
     }
 
     @Override

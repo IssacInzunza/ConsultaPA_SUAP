@@ -7,8 +7,8 @@ package test;
 
 import java.util.ArrayList;
 import java.util.List;
-import mx.desarrollo.DAO.AsignacionDAO;
-import mx.SUAP.entidad.Asignacion;
+import mx.desarrollo.DAO.UsuariosDAO;
+import mx.SUAP.entidad.Usuarios;
 
 /**
  *
@@ -16,12 +16,12 @@ import mx.SUAP.entidad.Asignacion;
  */
 public class test {
     public static void main(String[] args) {
-        List<Asignacion> listaUsuarios = new ArrayList();
-        AsignacionDAO usuarioDao = new AsignacionDAO();
+        List<Usuarios> listaUsuarios = new ArrayList();
+        UsuariosDAO usuarioDao = new UsuariosDAO();
         listaUsuarios = usuarioDao.findAll();
         
-        for(Asignacion us : listaUsuarios){
-            System.out.println("Correo: " + us.getIdAsignacion());
+        for(Usuarios us : listaUsuarios){
+            System.out.println("Usuario: " + us.getNombreDeUsuario());
         }
     }
 }

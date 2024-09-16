@@ -5,9 +5,12 @@
  */
 package mx.desarrollo.integracion;
 
-import mx.desarrollo.DAO.AsignacionDAO;
+
+import mx.desarrollo.DAO.AdministradoresDAO;
+import mx.desarrollo.DAO.HorarioDAO;
 import mx.desarrollo.DAO.ProfesoresDAO;
-import mx.desarrollo.DAO.UnidadDeAprendizajeDAO;
+import mx.desarrollo.DAO.UnidadesDeAprendizajeDAO;
+import mx.desarrollo.DAO.UsuariosDAO;
 
 
 /**
@@ -16,21 +19,13 @@ import mx.desarrollo.DAO.UnidadDeAprendizajeDAO;
  */
 public class ServiceLocator {
     
-    private static AsignacionDAO asignacionDAO;
     private static ProfesoresDAO profesoresDAO;
-    private static UnidadDeAprendizajeDAO unidaddeprendizajeDAO;
-
+    private static UnidadesDeAprendizajeDAO unidaddeprendizajeDAO;
+    private static AdministradoresDAO administradoresDAO;
+    private static UsuariosDAO usuariosDAO;
+    private static HorarioDAO horarioDAO;
     /**
-     * se crea la instancia para alumno DAO si esta no existe
-     */
-    public static AsignacionDAO getInstanceAsignacionDAO(){
-        if(asignacionDAO == null){
-            asignacionDAO = new AsignacionDAO();
-            return asignacionDAO;
-        } else{
-            return asignacionDAO;
-        }
-    }
+    
     /**
      * se crea la instancia de usuarioDAO si esta no existe
      */
@@ -43,13 +38,45 @@ public class ServiceLocator {
         }
     }
     
-    public static UnidadDeAprendizajeDAO getInstanceUnidadDeAprendizajeDAO(){
+    public static UnidadesDeAprendizajeDAO getInstanceUnidadDeAprendizajeDAO(){
         if(unidaddeprendizajeDAO == null){
-            unidaddeprendizajeDAO = new UnidadDeAprendizajeDAO();
+            unidaddeprendizajeDAO = new UnidadesDeAprendizajeDAO();
             return unidaddeprendizajeDAO;
         } else{
             return unidaddeprendizajeDAO;
         }
+    }
+    /**
+     * Obtiene la instancia de AdministradoresDAO si no existe una, crea una nueva instancia.
+     * @return Instancia de AdministradoresDAO.
+     */
+    public static AdministradoresDAO getInstanceAdministradoresDAO() {
+        if (administradoresDAO == null) {
+            administradoresDAO = new AdministradoresDAO();
+        }
+        return administradoresDAO;
+    }
+
+    /**
+     * Obtiene la instancia de UsuariosDAO si no existe una, crea una nueva instancia.
+     * @return Instancia de UsuariosDAO.
+     */
+    public static UsuariosDAO getInstanceUsuariosDAO() {
+        if (usuariosDAO == null) {
+            usuariosDAO = new UsuariosDAO();
+        }
+        return usuariosDAO;
+    }
+
+    /**
+     * Obtiene la instancia de HorarioDAO si no existe una, crea una nueva instancia.
+     * @return Instancia de HorarioDAO.
+     */
+    public static HorarioDAO getInstanceHorarioDAO() {
+        if (horarioDAO == null) {
+            horarioDAO = new HorarioDAO();
+        }
+        return horarioDAO;
     }
     
 }
