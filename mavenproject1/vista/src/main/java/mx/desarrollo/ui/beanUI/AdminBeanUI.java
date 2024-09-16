@@ -48,4 +48,14 @@ public class AdminBeanUI implements Serializable{
             e.printStackTrace();
         }
     }
+    
+    public void redirigirAAltaUDA() {
+        try {
+            FacesContext facesContext = FacesContext.getCurrentInstance();
+            NavigationHandler navigationHandler = facesContext.getApplication().getNavigationHandler();
+            navigationHandler.handleNavigation(facesContext, null, "consultaUnidades.xhtml?faces-redirect=true");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
