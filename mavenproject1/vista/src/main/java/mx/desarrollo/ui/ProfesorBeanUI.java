@@ -20,20 +20,36 @@ import mx.desarrollo.helper.ProfesorHelper;
 @ViewScoped
 public class ProfesorBeanUI implements Serializable{
     private final ProfesorHelper helper;
-    private final List<Profesores> profesores;
+    private List<Profesores> profesores;
+    private Profesores profesorSeleccionado; // Atributo para el profesor seleccionado
     
     public ProfesorBeanUI() {
-        // Inicializamos la instancia de profesorHelper
         helper = new ProfesorHelper();
-        
-        // Obtenemos la lista de profesores usando el helper
         this.profesores = helper.getlistProfesores();
     }
     
-    
-    // Getter para la lista de profesores
     public List<Profesores> getProfesores() {
         return profesores;
     }
+    
+    public void setProfesorSeleccionado(Profesores profesorSeleccionado) {
+        this.profesorSeleccionado = profesorSeleccionado;
+    }
+    
+     public void modificarProfesorDesdeFormulario() {
+        if (profesorSeleccionado != null) {
+            helper.updateProfesor(profesorSeleccionado); 
+            this.profesores = helper.getlistProfesores();
+        }
+    }
+
+
+
+     public void eliminarProfesor() {
+        if (profesorSeleccionado != null) {
+            helper.deleteProfesor(profesorSeleccionado);
+            this.profesores = helper.getlistProfesores();
+        }
+     }
      
 }

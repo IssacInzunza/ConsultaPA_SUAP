@@ -22,17 +22,8 @@ public class DelegateProfesores {
         ServiceLocator.getInstanceProfesoresDAO().update(profesor);
     }
 
-    public boolean deleteProfesores(Profesores profesor) {
-        //Profesores profesores = new Profesores();
-        List<Profesores> prof = ServiceLocator.getInstanceProfesoresDAO().findAll();
-        for(Profesores pro:prof){
-            if(pro.getNombre().equalsIgnoreCase(profesor.getNombre())){
-                //profesores = pro;
-                ServiceLocator.getInstanceProfesoresDAO().delete(pro);
-                return true;
-            }
-        }
-        return false;
+    public void deleteProfesores(Profesores profesor) {
+        ServiceLocator.getInstanceProfesoresDAO().delete(profesor);
     }
 
     public List<Profesores> findAllProfesores() {
@@ -42,8 +33,4 @@ public class DelegateProfesores {
     public Profesores findProfesorById(Integer id) {
         return ServiceLocator.getInstanceProfesoresDAO().find(id);
     }
-    
-    /*public Profesores findProfesorById(String nombre) {
-        return ServiceLocator.getInstanceProfesoresDAO().find(nombre);
-    }*/
 }
