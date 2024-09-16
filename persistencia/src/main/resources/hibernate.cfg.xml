@@ -10,7 +10,7 @@
     <property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/suap?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password">Valeria1315</property>
+    <property name="hibernate.connection.password">root</property>
     <property name="c3p0.autoCommitOnClose">true</property>
     <property name="c3p0.acquire_increment">1</property>
     <property name="c3p0.initialPoolSize">5</property>
@@ -22,8 +22,10 @@
     <property name="c3p0.timeout">100</property>
     <!-- Nota: Aqui deben ir todas las entidades que se formaron de su base de datos
 en este caso se crearon las siguiente -->
-    <mapping class="mx.SUAP.entidad.Asignacion"/>
+    <mapping class="mx.SUAP.entidad.Administradores"/>
+    <mapping class="mx.SUAP.entidad.Horario"/>
+    <mapping class="mx.SUAP.entidad.Usuarios"/>
     <mapping class="mx.SUAP.entidad.Profesores"/>
-    <mapping class="mx.SUAP.entidad.UnidadDeAprendizaje"/>
+    <mapping class="mx.SUAP.entidad.UnidadesDeAprendizaje"/>
   </session-factory>
 </hibernate-configuration>

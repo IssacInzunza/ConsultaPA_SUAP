@@ -12,7 +12,7 @@ import mx.desarrollo.persistencia.AbstractDAO;
  * @author issac
  */
 public class ProfesoresDAO extends AbstractDAO<Integer, Profesores>{
-    
-   
-   
+    /*public void darDeAltaProfesor(String idProfesor, String nombre, String apellido){
+        //String sql
+    }*/
 }
