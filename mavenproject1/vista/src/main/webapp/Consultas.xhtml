@@ -65,16 +65,14 @@
                         <h:outputText value="#{profesor.rfc}" />
                     </p:column>
                     <p:column headerText="Acciones">
-                        <p:commandButton value="Modificar" 
-                            action="#{profesorBeanUI.setProfesorSeleccionado(profesor)}" 
-                            onclick="PF('editDialog').show();" 
-                            process="@this" />
-
+                         
+                        
                         <p:commandButton value="Eliminar" 
                             action="#{profesorBeanUI.setProfesorSeleccionado(profesor)}" 
                             onclick="PF('confirmDialog').show();" 
                             process="@this" />
                     </p:column>
+                    
                 </p:dataTable>
 
                 <p:confirmDialog header="Confirmación" 
@@ -83,12 +81,26 @@
                                  widgetVar="confirmDialog">
                     <p:commandButton value="Sí" 
                                      action="#{profesorBeanUI.eliminarProfesor()}" 
-                                     oncomplete="location.reload();" />
+                                     oncomplete="location.reload();"
+                                     update="@form"/>
                     <p:commandButton value="No" onclick="PF('confirmDialog').hide()" />
-                </p:confirmDialog>             
+                </p:confirmDialog>
+                
+                <!-- Diálogo para mostrar unidades asignadas -->
+                <p:dialog header="Unidades Asignadas" widgetVar="unidadesDialog" modal="true" resizable="false" closeOnEscape="true">
+                    <h:panelGrid columns="2">
+                        <p:dataTable value="#{profesorBeanUI.unidadesAsignadas}" var="unidad" >
+                            <p:column headerText="ID">
+                                <h:outputText value="#{unidad.idUnidadAprendizaje}" />
+                            </p:column>
+                            <p:column headerText="Nombre">
+                                <h:outputText value="#{unidad.nombre}" />
+                            </p:column>
+                        </p:dataTable>
+                        <p:commandButton value="Cerrar" onclick="PF('unidadesDialog').hide();" />
+                    </h:panelGrid>
+                </p:dialog> 
             </div>
         </h:form>
-
     </h:body>
 </html>
-

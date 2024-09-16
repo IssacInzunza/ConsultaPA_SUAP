@@ -11,7 +11,7 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import mx.SUAP.entidad.Profesores;
-import mx.desarrollo.helper.ProfesorHelper;
+import mx.SUAP.helper.ProfesorHelper;
 /**
  *
  * @author jesus
