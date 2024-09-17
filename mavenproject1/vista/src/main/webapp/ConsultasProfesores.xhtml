@@ -8,69 +8,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <style>
             body, html {
-                margin: 0;
-                padding: 0;
                 height: 100%;
+                margin: 0;
                 display: flex;
                 flex-direction: column;
+                justify-content: center;
                 align-items: center;
             }
 
-            /* Header Styling */
-            .header {
-                background-color: #008000;
-                color: white;
-                padding: 10px 20px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                font-size: 18px;
-                position: fixed;
-                width: 100%;
-                top: 0;
-                z-index: 1000;
-            }
-
-            /* Espacio para que no se superponga el header sobre el contenido */
-            .main-content {
-                margin-top: 60px; /* Ajuste basado en la altura del header */
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            /* Logo SUAP */
-            .header .logo {
-                font-size: 50px;
-                font-weight: bold;
-            }
-
-            /* Responsive Navigation Menu */
-            .header a {
-                color: white;
-                text-decoration: none;
-                margin: 0 15px;
-                font-weight: bold;
-                padding: 10px;
-                transition: background-color 0.3s ease;
-            }
-
-            .header a:hover {
-                background-color: #FFD700; /* Color amarillo suave */
-                color: black;
-                border-radius: 5px;
-            }
-
-
-            /* Table Styling */
             .contenedor {
                 width: 80%;
+                margin-top: 20px;
                 padding: 20px;
                 border-radius: 10px;
                 background-color: #f7f7f7;
                 box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-                margin-bottom: 20px;
             }
 
             .ui-datatable table {
@@ -91,25 +43,9 @@
             .ui-datatable td {
                 text-align: center;
             }
-
-            .contenedor h2 {
-                margin-bottom: 20px;
-            }
         </style>
     </h:head>
     <h:body>
-        
-           <div class="header">
-            <div class="logo">SUAP</div>
-            <div>
-                <a href="indexAdministrador.xhtml">Inicio</a>
-                <a href="alta.xhtml">Altas Profesores</a>
-                <a href="altaUnidad.xhtml">Altas Unidades de Aprendizaje</a>
-                <a href="Consultas.xhtml">Consulta</a>
-                <a href="consulta.xhtml">Cerrar Seccion</a>
-
-            </div>
-        </div>
 
         <h:form id="formProfesores">
             <div class="contenedor">
@@ -129,16 +65,14 @@
                         <h:outputText value="#{profesor.rfc}" />
                     </p:column>
                     <p:column headerText="Acciones">
-                        <!-- Reemplazamos @row por #{profesor} para referenciar al objeto actual -->
-                        <p:commandButton value="Modificar" 
-                            action="#{profesorBeanUI.setProfesorSeleccionado(profesor)}" 
-                            onclick="PF('editDialog').show();" 
-                            process="@this" update=":formModificar"/>
+                         
+                        
                         <p:commandButton value="Eliminar" 
                             action="#{profesorBeanUI.setProfesorSeleccionado(profesor)}" 
                             onclick="PF('confirmDialog').show();" 
                             process="@this" />
                     </p:column>
+                    
                 </p:dataTable>
 
                 <p:confirmDialog header="Confirmación" 
@@ -147,22 +81,26 @@
                                  widgetVar="confirmDialog">
                     <p:commandButton value="Sí" 
                                      action="#{profesorBeanUI.eliminarProfesor()}" 
-                                     oncomplete="location.reload();" />
+                                     oncomplete="location.reload();"
+                                     update="@form"/>
                     <p:commandButton value="No" onclick="PF('confirmDialog').hide()" />
-                </p:confirmDialog>             
+                </p:confirmDialog>
+                
+                <!-- Diálogo para mostrar unidades asignadas -->
+                <p:dialog header="Unidades Asignadas" widgetVar="unidadesDialog" modal="true" resizable="false" closeOnEscape="true">
+                    <h:panelGrid columns="2">
+                        <p:dataTable value="#{profesorBeanUI.unidadesAsignadas}" var="unidad" >
+                            <p:column headerText="ID">
+                                <h:outputText value="#{unidad.idUnidadAprendizaje}" />
+                            </p:column>
+                            <p:column headerText="Nombre">
+                                <h:outputText value="#{unidad.nombre}" />
+                            </p:column>
+                        </p:dataTable>
+                        <p:commandButton value="Cerrar" onclick="PF('unidadesDialog').hide();" />
+                    </h:panelGrid>
+                </p:dialog> 
             </div>
         </h:form>
-
-        <!-- Modal para editar materias -->
-<p:dialog header="Modificar Materia" widgetVar="editDialog" modal="true" width="400px" height="300px">
-    <h:form id="formModificar">
-       
-    </h:form>
-</p:dialog>
-
     </h:body>
-    
-    
-    
-    
 </html>
