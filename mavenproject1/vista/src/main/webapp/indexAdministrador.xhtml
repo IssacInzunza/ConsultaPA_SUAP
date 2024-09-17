@@ -147,9 +147,9 @@
             <h:form id="formMaterias">
                 <div class="contenedor">
                     <h2>Lista de Unidades de Aprendizaje</h2>
-                    <p:dataTable var="materia" value="#{unidadDeAprendizajeBeanUI.materias}" paginator="true" rows="10">
+                    <p:dataTable var="materia" value="#{unidadBeanUI.unidades}" paginator="true" rows="10">
                         <p:column headerText="ID Materia">
-                            <h:outputText value="#{materia.idUnidadAprendizaje}" />
+                            <h:outputText value="#{materia.unidadDeAprendizajeId}" />
                         </p:column>
                         <p:column headerText="Nombre">
                             <h:outputText value="#{materia.nombre}" />
@@ -168,26 +168,7 @@
             </h:form>
 
             <!-- Tabla para Asignaciones -->
-            <h:form id="formAsignaciones">
-                <div class="contenedor">
-                    <h2>Lista de Asignaciones</h2>
-                    
-                    <p:dataTable var="asignacion" value="#{asignacionBeanUI.asignaciones}" paginator="true" rows="10">
-                        <p:column headerText="ID Asignación">
-                            <h:outputText value="#{asignacion.idAsignacion}" />
-                        </p:column>
-                        <p:column headerText="ID Profesor">
-                            <h:outputText value="#{asignacion.idProfesor.idProfesor}" />
-                        </p:column>
-                        <p:column headerText="Nombre Profesor">
-                            <h:outputText value="#{asignacion.idProfesor.nombre}" />
-                        </p:column>
-                        <p:column headerText="Materia Asignada">
-                            <h:outputText value="#{asignacion.idUDA.nombre}" />
-                        </p:column>
-                    </p:dataTable>
-                </div>
-            </h:form>
+            
         </div>
 
     </h:body>

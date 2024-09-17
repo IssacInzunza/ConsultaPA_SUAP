@@ -109,7 +109,6 @@
         </div>
 
 
-
         <div class="formulario-contenedor">
 
                     <h1>Altas de Unidad de Aprendizaje</h1>
@@ -142,34 +141,7 @@
                 </h:form>
             </div>
             <div class="cajaFormulario">
-                <h:form id="form2">
-                    <p:messages id="messages" showDetail="true" closable="true">
-                     
-                    </p:messages>
-                    <div class="form-group"> 
-                        <p:inputText class ="form-control" placeholder="ID UDA"  />
-                    </div>
-
-                    <p:selectOneMenu value="#{altaUDAUI.selectedDia}" 
-                                         >
-                            <f:selectItem itemLabel="Selecciona el dia" itemValue="" />
-                            <f:selectItems value="#{altaUDAUI.dias}" />
-                        </p:selectOneMenu>
-                    <p:selectOneMenu value="#{altaUDAUI.selectedTipo}" 
-                                         >
-                            <f:selectItem itemLabel="Selecciona el tipo de hora" itemValue="" />
-                            <f:selectItems value="#{altaUDAUI.tipo}" />
-                        </p:selectOneMenu>
-                    <div class="form-group"> 
-                        <p:inputText class ="form-control" placeholder="Hora inicio: 24:00"  />
-                    </div>
-                    <div class="form-group">
-                        <p:inputText class ="form-control" placeholder="Hora fin: 24:00"  />
-                    </div>
-
-
-                    <p:commandButton class="btn btn-success" />
-                </h:form>
+                
             </div>
         </div> 
     </h:body>
