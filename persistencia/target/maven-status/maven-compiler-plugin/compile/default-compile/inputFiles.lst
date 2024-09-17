@@ -1,8 +1,10 @@
 C:\Users\crono\OneDrive\Documents\GitHub\ConsultaPA_SUAP\persistencia\src\main\java\mx\desarrollo\integracion\ServiceLocator.java
-C:\Users\crono\OneDrive\Documents\GitHub\ConsultaPA_SUAP\persistencia\src\main\java\mx\desarrollo\DAO\UnidadDeAprendizajeDAO.java
+C:\Users\crono\OneDrive\Documents\GitHub\ConsultaPA_SUAP\persistencia\src\main\java\mx\desarrollo\DAO\HorarioDAO.java
 C:\Users\crono\OneDrive\Documents\GitHub\ConsultaPA_SUAP\persistencia\src\main\java\mx\desarrollo\persistencia\HibernateUtil.java
+C:\Users\crono\OneDrive\Documents\GitHub\ConsultaPA_SUAP\persistencia\src\main\java\mx\desarrollo\DAO\UsuariosDAO.java
 C:\Users\crono\OneDrive\Documents\GitHub\ConsultaPA_SUAP\persistencia\src\main\java\test\test.java
-C:\Users\crono\OneDrive\Documents\GitHub\ConsultaPA_SUAP\persistencia\src\main\java\mx\desarrollo\DAO\AsignacionDAO.java
+C:\Users\crono\OneDrive\Documents\GitHub\ConsultaPA_SUAP\persistencia\src\main\java\mx\desarrollo\DAO\AdministradoresDAO.java
+C:\Users\crono\OneDrive\Documents\GitHub\ConsultaPA_SUAP\persistencia\src\main\java\mx\desarrollo\DAO\UnidadesDeAprendizajeDAO.java
 C:\Users\crono\OneDrive\Documents\GitHub\ConsultaPA_SUAP\persistencia\src\main\java\mx\desarrollo\persistencia\InterfaceDAO.java
 C:\Users\crono\OneDrive\Documents\GitHub\ConsultaPA_SUAP\persistencia\src\main\java\mx\desarrollo\DAO\ProfesoresDAO.java
 C:\Users\crono\OneDrive\Documents\GitHub\ConsultaPA_SUAP\persistencia\src\main\java\mx\desarrollo\persistencia\AbstractDAO.java

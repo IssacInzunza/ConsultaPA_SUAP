@@ -1,4 +1,9 @@
-mx\desarrollo\beanUI\LoginBeanUI.class
-mx\desarrollo\ui\ProfesorBeanUI.class
-mx\desarrollo\helper\LoginHelper.class
-mx\desarrollo\helper\ProfesorHelper.class
+mx\SUAP\helper\UnidadHelper.class
+mx\desarrollo\ui\beanUI\AdminBeanUI.class
+mx\SUAP\helper\ProfesorHelper.class
+mx\desarrollo\ui\beanUI\ProfesorBeanUI.class
+mx\SUAP\helper\AltasHelper.class
+mx\desarrollo\ui\beanUI\LoginBeanUI.class
+mx\SUAP\helper\LoginHelper.class
+mx\desarrollo\ui\beanUI\AltasBeanUI.class
+mx\SUAP\helper\UsuarioAltaHelper.class

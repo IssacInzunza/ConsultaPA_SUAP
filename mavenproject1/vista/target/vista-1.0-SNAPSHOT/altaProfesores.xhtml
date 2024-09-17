@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://xmlns.jcp.org/jsf/html"
+  xmlns:p="http://primefaces.org/ui"
+  xmlns:jsf="http://xmlns.jcp.org/jsf"
+  xmlns:f="http://xmlns.jcp.org/jsf/core"
+>
+  <h:head>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+        <style>
+            body, html {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            /* Header Styling */
+            .header {
+                background-color: #008000;
+                color: white;
+                padding: 10px 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 18px;
+                position: fixed;
+                width: 100%;
+                top: 0;
+                z-index: 1000;
+            }
+
+            /* Espacio para que no se superponga el header sobre el contenido */
+            .main-content {
+                margin-top: 100px; /* Esto crea espacio suficiente debajo del header */
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            /* Logo SUAP */
+            .header .logo {
+                font-size: 50px;
+                font-weight: bold;
+            }
+
+            /* Responsive Navigation Menu */
+            .header a {
+                color: white;
+                text-decoration: none;
+                margin: 0 15px;
+                font-weight: bold;
+                padding: 10px;
+                transition: background-color 0.3s ease;
+            }
+
+            .header a:hover {
+                background-color: #FFD700; /* Color amarillo suave */
+                color: black;
+                border-radius: 5px;
+            }
+
+
+            /* Table Styling */
+            .contenedor {
+                width: 80%;
+                padding: 20px;
+                border-radius: 10px;
+                background-color: #f7f7f7;
+                box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+            }
+
+            .ui-datatable table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            .ui-datatable th, .ui-datatable td {
+                padding: 12px;
+                border: 1px solid #ddd;
+            }
+
+            .ui-datatable th {
+                background-color: #4CAF50;
+                color: white;
+            }
+
+            .ui-datatable td {
+                text-align: center;
+            }
+
+            .contenedor h2 {
+                margin-bottom: 20px;
+            }
+            
+            .button-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); /* Crea 2 columnas iguales */
+                gap: 20px; /* Espacio entre botones */
+                margin-top: 20px;
+                width: 80%; /* Ajusta el ancho según sea necesario */
+                justify-items: center;
+            }
+        </style>
+  </h:head>
+
+  <!-- Header with Navigation Links -->
+  <div class="header">
+      
+    <div class="logo">SUAP</div>
+    <div>
+      <a href="indexAdministrador.xhtml">Inicio</a>
+            <a href="altaProfesores.xhtml">Altas Profesores</a>
+            <a href="altaUDAs.xhtml">Altas Unidades de Aprendizaje</a>
+            <a href="consultasProfesores.xhtml">Consulta Profesores</a>
+            <a href="consultasUnidades.xhtml">Consulta UDA</a>
+            <a href="Cerrar.xhtml">Cerrar Sesion</a>
+    </div>
+  </div>
+
+  <h:body>
+    <div class="main-content">
+            <h1>Módulo de altas de profesores</h1>
+
+      <h:form>
+        <p:messages id="messages" showDetail="true" closable="true">
+        </p:messages>
+        <div class="altaProfs">
+          <div class="panel-header">
+          </div>
+          <div class="panel-body">
+            <div class="form-group">
+              <div class="form-group">
+                <p:inputText
+                  class="form-control"
+                  placeholder="ID de profesor: "
+                  value="#{altaProfesorUI.profesor.idProfesor}"
+                />
+              </div>
+              <p:inputText
+                class="form-control"
+                placeholder="Nombre(s):"
+                autocomplete="false"
+                value="#{altaProfesorUI.profesor.nombre}"
+              />
+            </div>
+            <div class="form-group">
+              <p:inputText
+                class="form-control"
+                placeholder="Apellidos: "
+                value="#{altaProfesorUI.profesor.apellido}"
+              />
+            </div>
+            <div class="form-group">
+              <p:inputText
+                class="form-control"
+                placeholder="RFC: "
+                value="#{altaProfesorUI.profesor.rfc}"
+              />
+            </div>
+
+            <p:commandButton
+              update="messages"
+              class="btn btn-success"
+              value="Dar de alta"
+              actionListener="#{altaProfesorUI.darDeAlta()}"
+            />
+          </div>
+        </div>
+      </h:form>
+    </div>
+  </h:body>
+</html>
