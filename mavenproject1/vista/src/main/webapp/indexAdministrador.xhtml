@@ -99,37 +99,96 @@
                 grid-template-columns: repeat(2, 1fr); /* Crea 2 columnas iguales */
                 gap: 20px; /* Espacio entre botones */
                 margin-top: 20px;
-                width: 80%; /* Ajusta el ancho según sea necesario */
+                width: 80%; /* Ajusta el ancho segÃºn sea necesario */
                 justify-items: center;
             }
         </style>
     </h:head>
-    <h:body>
-    <!-- Header with Navigation Links -->
-    <div class="header">
-        <div class="logo">SUAP</div>
-        <div>
+ <h:body>
+
+        <!-- Header with Navigation Links -->
+        <div class="header">
+            <div class="logo">SUAP</div>
+            <div>
             <a href="indexAdministrador.xhtml">Inicio</a>
             <a href="altaProfesores.xhtml">Altas Profesores</a>
             <a href="altaUDAs.xhtml">Altas Unidades de Aprendizaje</a>
             <a href="consultasProfesores.xhtml">Consulta Profesores</a>
             <a href="consultasUnidades.xhtml">Consulta UDA</a>
             <a href="Cerrar.xhtml">Cerrar Sesion</a>
-        </div>
-    </div>
 
-    <h:form>
-        <!-- Contenido principal debajo del header -->
-        <div class="main-content">
-            <!-- Contenedor de botones con PrimeFaces -->
-            <div class="button-container">
-                <p:commandButton value="Alta Profesores" styleClass="button" action="#{adminBeanUI.redirigirAAltaProfesor()}" />
-                <p:commandButton value="Alta Unidades Academicas" styleClass="button" action="#{adminBeanUI.redirigirAAltaUDA()}"/>
-                <p:commandButton value="Consulta Profesores" styleClass="button" action="#{adminBeanUI.redirigirAConsultaProfesor}" />
-                <p:commandButton value="Consulta Unidades" styleClass="button" action="#{adminBeanUI.redirigirAConsultaUnidades()}"/>
             </div>
         </div>
-    </h:form>
-</h:body>
 
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Tabla para Profesores -->
+            <h:form id="formProfesores">
+                <div class="contenedor">
+                    <h2>Lista de Profesores</h2>
+                    <p:dataTable var="profesor" value="#{profesorBeanUI.profesores}" paginator="true" rows="10">
+                        <p:column headerText="ID">
+                            <h:outputText value="#{profesor.idProfesor}" />
+                        </p:column>
+                        <p:column headerText="Nombre">
+                            <h:outputText value="#{profesor.nombre}" />
+                        </p:column>
+                        <p:column headerText="Apellido">
+                            <h:outputText value="#{profesor.apellido}" />
+                        </p:column>
+                        <p:column headerText="RFC">
+                            <h:outputText value="#{profesor.rfc}" />
+                        </p:column>
+                    </p:dataTable>
+                </div>
+            </h:form>
+
+            <!-- Tabla para Unidades de Aprendizaje -->
+            <h:form id="formMaterias">
+                <div class="contenedor">
+                    <h2>Lista de Unidades de Aprendizaje</h2>
+                    <p:dataTable var="materia" value="#{unidadDeAprendizajeBeanUI.materias}" paginator="true" rows="10">
+                        <p:column headerText="ID Materia">
+                            <h:outputText value="#{materia.idUnidadAprendizaje}" />
+                        </p:column>
+                        <p:column headerText="Nombre">
+                            <h:outputText value="#{materia.nombre}" />
+                        </p:column>
+                        <p:column headerText="Horas Clase">
+                            <h:outputText value="#{materia.horasClase}" />
+                        </p:column>
+                        <p:column headerText="Horas Taller">
+                            <h:outputText value="#{materia.horasTaller}" />
+                        </p:column>
+                        <p:column headerText="Horas Laboratorio">
+                            <h:outputText value="#{materia.horasLaboratorio}" />
+                        </p:column>
+                    </p:dataTable>
+                </div>
+            </h:form>
+
+            <!-- Tabla para Asignaciones -->
+            <h:form id="formAsignaciones">
+                <div class="contenedor">
+                    <h2>Lista de Asignaciones</h2>
+                    
+                    <p:dataTable var="asignacion" value="#{asignacionBeanUI.asignaciones}" paginator="true" rows="10">
+                        <p:column headerText="ID Asignación">
+                            <h:outputText value="#{asignacion.idAsignacion}" />
+                        </p:column>
+                        <p:column headerText="ID Profesor">
+                            <h:outputText value="#{asignacion.idProfesor.idProfesor}" />
+                        </p:column>
+                        <p:column headerText="Nombre Profesor">
+                            <h:outputText value="#{asignacion.idProfesor.nombre}" />
+                        </p:column>
+                        <p:column headerText="Materia Asignada">
+                            <h:outputText value="#{asignacion.idUDA.nombre}" />
+                        </p:column>
+                    </p:dataTable>
+                </div>
+            </h:form>
+        </div>
+
+    </h:body>
 </html>
