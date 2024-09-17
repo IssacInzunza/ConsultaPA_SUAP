@@ -1,8 +1,10 @@
-mx\desarrollo\ui\beanUI\ValidacionesCadenas.class
+mx\SUAP\helper\AltaHorarioHelper.class
 mx\SUAP\helper\AltasHelper.class
-mx\desarrollo\ui\beanUI\LoginBeanUI.class
 mx\SUAP\helper\LoginHelper.class
+mx\SUAP\ui\beanUI\AltasBeanUI.class
 mx\SUAP\helper\AltaUDAHelper.class
-mx\desarrollo\ui\beanUI\AltasBeanUI.class
-mx\desarrollo\ui\beanUI\AltasUDABeanUI.class
+mx\SUAP\ui\beanUI\AltasUDABeanUI.class
+mx\SUAP\ui\beanUI\LoginBeanUI.class
+mx\SUAP\ui\beanUI\ValidacionesCadenas.class
+mx\SUAP\ui\beanUI\AltasHorarioBeanUI.class
 mx\SUAP\helper\UsuarioAltaHelper.class

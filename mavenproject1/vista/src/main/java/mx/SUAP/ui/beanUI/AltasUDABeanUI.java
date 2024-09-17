@@ -34,27 +34,12 @@ public class AltasUDABeanUI implements Serializable {
 
     private AltaUDAHelper altaUDAHelper;
     private UnidadesDeAprendizaje uda;
-    private List<String> dias;
-    private List<String> tipo;
-
-    private String selectedTipo;
-    private String selectedDia;
+    
 
     public AltasUDABeanUI() {
         altaUDAHelper = new AltaUDAHelper();
 
-        tipo = new ArrayList<>();
-        tipo.add("clase");
-        tipo.add("taller");
-        tipo.add("laboratorio");
-
-        dias = new ArrayList<>();
-        dias.add("lunes");
-        dias.add("martes");
-        dias.add("miercoles");
-        dias.add("jueves");
-        dias.add("viernes");
-        dias.add("sabado");
+        
 
     }
 
@@ -123,28 +108,6 @@ public class AltasUDABeanUI implements Serializable {
         this.uda = uda;
     }
 
-    public String getSelectedTipo() {
-        return selectedTipo;
-    }
-
-    public void setSelectedTipo(String selectedTipo) {
-        this.selectedTipo = selectedTipo;
-    }
-
-    public String getSelectedDia() {
-        return selectedDia;
-    }
-
-    public void setSelectedDia(String selectedDia) {
-        this.selectedDia = selectedDia;
-    }
-
-    public List<String> getDias() {
-        return dias;
-    }
-
-    public List<String> getTipo() {
-        return tipo;
-    }
+   
 
 }
