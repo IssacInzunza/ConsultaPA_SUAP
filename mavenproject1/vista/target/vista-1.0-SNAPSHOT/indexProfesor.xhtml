@@ -3,7 +3,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Vista de Administrador</title>
+        <title>Vista Profesor</title>
         <style>
             body, html {
                 margin: 0;
@@ -110,39 +110,14 @@
         <div class="header">
             <div class="logo">SUAP</div>
             <div>
-            <a href="indexAdministrador.xhtml">Inicio</a>
-            <a href="altaProfesores.xhtml">Altas Profesores</a>
-            <a href="altaUDAs.xhtml">Altas Unidades de Aprendizaje</a>
-            <a href="consultasProfesores.xhtml">Consulta Profesores</a>
-            <a href="consultasUnidades.xhtml">Consulta UDA</a>
-            <a href="Cerrar.xhtml">Cerrar Sesion</a>
+                <a href="Cerrar.xhtml">Cerrar Seccion</a>
 
             </div>
         </div>
 
         <!-- Main Content -->
         <div class="main-content">
-            <!-- Tabla para Profesores -->
-            <h:form id="formProfesores">
-                <div class="contenedor">
-                    <h2>Lista de Profesores</h2>
-                    <p:dataTable var="profesor" value="#{profesorBeanUI.profesores}" paginator="true" rows="10">
-                        <p:column headerText="ID">
-                            <h:outputText value="#{profesor.idProfesor}" />
-                        </p:column>
-                        <p:column headerText="Nombre">
-                            <h:outputText value="#{profesor.nombre}" />
-                        </p:column>
-                        <p:column headerText="Apellido">
-                            <h:outputText value="#{profesor.apellido}" />
-                        </p:column>
-                        <p:column headerText="RFC">
-                            <h:outputText value="#{profesor.rfc}" />
-                        </p:column>
-                    </p:dataTable>
-                </div>
-            </h:form>
-
+ 
             <!-- Tabla para Unidades de Aprendizaje -->
             <h:form id="formMaterias">
                 <div class="contenedor">
@@ -167,27 +142,7 @@
                 </div>
             </h:form>
 
-            <!-- Tabla para Asignaciones -->
-            <h:form id="formAsignaciones">
-                <div class="contenedor">
-                    <h2>Lista de Asignaciones</h2>
-                    
-                    <p:dataTable var="asignacion" value="#{asignacionBeanUI.asignaciones}" paginator="true" rows="10">
-                        <p:column headerText="ID Asignación">
-                            <h:outputText value="#{asignacion.idAsignacion}" />
-                        </p:column>
-                        <p:column headerText="ID Profesor">
-                            <h:outputText value="#{asignacion.idProfesor.idProfesor}" />
-                        </p:column>
-                        <p:column headerText="Nombre Profesor">
-                            <h:outputText value="#{asignacion.idProfesor.nombre}" />
-                        </p:column>
-                        <p:column headerText="Materia Asignada">
-                            <h:outputText value="#{asignacion.idUDA.nombre}" />
-                        </p:column>
-                    </p:dataTable>
-                </div>
-            </h:form>
+        
         </div>
 
     </h:body>
