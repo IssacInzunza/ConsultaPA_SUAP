@@ -5,7 +5,7 @@
  */
 package test;
 
-import mx.desarrollo.entidad.Usuario;
+import mx.SUAP.entidad.Profesores;
 import mx.desarrollo.integracion.ServiceFacadeLocator;
 
 /**
@@ -14,14 +14,16 @@ import mx.desarrollo.integracion.ServiceFacadeLocator;
  */
 public class test {
     public static void main(String[] args) {
-        Usuario usuario = new Usuario();
         
-        usuario = ServiceFacadeLocator.getInstanceFacadeUsuario().login("1","johan12@uabc.edu.mx");
+       Profesores profesores = ServiceFacadeLocator.getInstanceFacadeProfesores().findProfesoresById(1233);
         
-        if(usuario.getIdusuario() != null){
-            System.out.println("Login exitoso con el correo: " + usuario.getCorreo());
+        if(profesores.getIdProfesor()!= null){
+            System.out.println(profesores.getIdProfesor());
+            System.out.println(profesores.getNombre());
+            System.out.println(profesores.getApellido());
+            System.out.println(profesores.getRfc());
         }else{
-            System.out.println("No se encontro registro");
+            System.out.println("No se encontro registro aaa");
         }
     }
 }

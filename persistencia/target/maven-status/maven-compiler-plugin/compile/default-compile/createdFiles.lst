@@ -1,7 +1,10 @@
+mx\desarrollo\DAO\UnidadesDeAprendizajeDAO.class
 mx\desarrollo\integracion\ServiceLocator.class
 mx\desarrollo\persistencia\HibernateUtil.class
-mx\desarrollo\DAO\AlumnoDAO.class
+mx\desarrollo\DAO\ProfesoresDAO.class
 test\test.class
+mx\desarrollo\DAO\HorarioDAO.class
+mx\desarrollo\DAO\UsuariosDAO.class
 mx\desarrollo\persistencia\InterfaceDAO.class
-mx\desarrollo\DAO\UsuarioDAO.class
+mx\desarrollo\DAO\AdministradoresDAO.class
 mx\desarrollo\persistencia\AbstractDAO.class

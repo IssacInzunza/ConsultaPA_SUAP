@@ -130,6 +130,8 @@ public abstract class AbstractDAO<PK extends Serializable, T> implements Interfa
         return (T) obj;
 
     }
+    
+    
 
     @Override
     public List<T> findAll() {

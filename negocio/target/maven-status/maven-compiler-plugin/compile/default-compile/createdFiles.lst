@@ -1,6 +1,12 @@
-mx\desarrollo\delegate\DelegateAlumno.class
-mx\desarrollo\facade\FacadeAlumno.class
+mx\desarrollo\facade\FacadeAdministradores.class
+mx\desarrollo\delegate\DelegateUnidadesDeAprendizaje.class
+mx\desarrollo\facade\FacadeHorarios.class
+mx\desarrollo\delegate\DelegateHorarios.class
+mx\desarrollo\delegate\DelegateUsuarios.class
+mx\desarrollo\facade\FacadeProfesores.class
+mx\desarrollo\delegate\DelegateProfesores.class
 test\test.class
-mx\desarrollo\delegate\DelegateUsuario.class
-mx\desarrollo\facade\FacadeUsuario.class
+mx\desarrollo\delegate\DelegateAdministradores.class
+mx\desarrollo\facade\FacadeUsuarios.class
+mx\desarrollo\facade\FacadeUnidaddeaprendizaje.class
 mx\desarrollo\integracion\ServiceFacadeLocator.class
